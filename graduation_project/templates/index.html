@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="this web base " />
+    <title>Colorectal cancer</title>
+    <link rel="stylesheet" href="{% static 'css/master.css'%}">
+
+    <!-- this is a comment -->
+</head>
+
+<body>
+
+    <div class="header">
+
+        <div class="header">
+
+            <ul>
+    
+                <a href="{% url 'home' %}">
+                    <li>Home</li>
+                </a>
+                <a href="{% url 'about' %}">
+                    <li>About Us</li>
+                </a>
+                <a href="{% url 'help' %}">
+                    <li>Help</li>
+                </a>
+                <a href="{% url 'contact' %} ">
+                    <li>Contact</li>
+                </a>
+            </ul>
+        </div>
+        <a href="{% url 'login' %}">Log in</a>
+
+    </div>
+    <div class="description">
+        <div class="content">
+
+            <h1> Colorectal <br>
+                Cancer <br>
+                Test </h1>
+
+            <div class="details">
+                <p>this web base for some laboratories, hospitals, doctors and<br>
+                    specialists
+
+                    in the fields cancer diseases, by using the gut <br>microbiome in the
+                    early detection of the colorectal cancer.</p>
+            </div>
+            <a href="{% url 'register' %}">Sign Up</a>
+        </div>
+        <div class="image">
+            <img src="{% static 'images/background.jpeg'%}" />
+            
+            
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{% static 'css/about.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <title>profile info (Test)</title>
+</head>
+
+<style>
+body{
+    background-image:url("{% static 'images/backgraund.jpeg' %}");
+    font-family:  Helvetica, sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+
+<body>
+    <div class="header">
+
+        <ul>
+            <a href="{% url 'profile' %}">
+                <li>Profile</li>
+            </a>
+            <a href="{% url 'home' %}">
+                <li>Home</li>
+            </a>
+            <a href="{% url 'about' %}">
+                <li>About Us</li>
+            </a>
+            <a href="{% url 'help' %}">
+                <li>Help</li>
+            </a>
+            <a href="{% url 'contact' %} ">
+                <li>Contact</li>
+            </a>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h1>Patient Info</h1>
+    
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="second">
+                <div>
+                    <button type="submit">Start Test</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>

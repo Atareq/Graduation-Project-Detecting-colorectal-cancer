@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Patient</title>
+</head>
+<style>
+    /* delete_test_result.html */
+
+/* Center the content vertically and horizontally */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Style the delete confirmation box */
+.delete-box {
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the delete message */
+.delete-message {
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Style the delete button */
+.delete-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+/* Style the cancel link */
+.cancel-link {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: #888;
+  text-decoration: none;
+}
+
+.cancel-link:hover {
+  color: #555;
+}
+
+</style>
+<body>
+    <!-- <p>Are you sure you want to delete the test result?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+</form> -->
+
+<div class="container">
+    <div class="delete-box">
+      <p class="delete-message">Are you sure you want to delete the test result?</p>
+      <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="delete-button">Delete</button>
+        <a href="{% url 'profile' %}" class="cancel-link">Cancel</a>
+      </form>
+    </div>
+  </div>
+  
+</body>
+</html>

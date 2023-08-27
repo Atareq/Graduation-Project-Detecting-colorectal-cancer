@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <title>Help</title>
+
+</head>
+<style>
+    body {
+        background-image: url("{% static 'images/backgraund.jpeg' %}");
+        font-family: Helvetica, sans-serif;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<body>
+    <div class="header">
+
+        <ul>
+
+            <a href="{% url 'home' %}">
+                <li>Home</li>
+            </a>
+            <a href="{% url 'about' %}">
+                <li>About Us</li>
+            </a>
+            <a href="{% url 'help' %}">
+                <li>Help</li>
+            </a>
+            <a href="{% url 'contact' %} ">
+                <li>Contact</li>
+            </a>
+        </ul>
+    </div>
+
+    <div class="container">
+
+        <div class="window">
+            <h1> Our young team is deeply motivated to use our expertise in bioinformatics for the benefit of society.
+                Specifically, we are eager to support medical researchers by creating customized websites that meet
+                their
+                unique requirements about colon cancer. By harnessing the power of technology, we aim to bridge the gap
+                between researchers and the digital world, enabling efficient dissemination of results, fostering
+                collaboration, and organizing data repositories. Through our unwavering dedication, we strive to empower
+                the
+                medical research community and contribute to advancements in healthcare. Together, we can create a
+                brighter
+                future, where knowledge and innovation pave the way for better patient outcomes.</h1>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

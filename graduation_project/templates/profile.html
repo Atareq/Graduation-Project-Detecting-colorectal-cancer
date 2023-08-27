@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>profile</title>
+
+  <style>
+     a.new-test {
+      background-color: #4BB543;
+      padding: 15px 20px;
+      color: white;
+      border-radius: 20px;
+      transition: all 0.3s;
+      cursor: pointer;
+      align-self: flex-end;
+      margin-top: 20px;
+    }
+
+    a.new-test:hover {
+      background-color: #59d84f;
+    }
+
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 200px;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    button[type="submit"] {
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Styling the table */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+
+    td a {
+      display: inline-block;
+      margin-right: 5px;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="{% url 'home' %}">Home</a>
+  <a href="{% url 'profile_info' %}" class="new-test">new test</a>
+
+  <form method="GET" action="{% url 'search_results' %}">
+    <label for="search_input">Search:</label>
+    <input type="text" id="search_input" name="search_query" placeholder="Search by ID">
+    <button type="submit">Search</button>
+  </form>
+  <br>
+  <form action="" method="POST" class="search-form">
+    {% csrf_token %}
+    <br>
+    <div>
+      <label for="researcher_id">ID</label>
+      <input type="text" id="researcher_id" value="{{ ID }}" readonly>
+    </div>
+    <br>
+    <div>
+      <label for="researcher_name">Name</label>
+      <input type="text" id="researcher_name" value="{{ name }}" readonly>
+    </div>
+    <br>
+    <table border="1" cellpadding="2px">
+      <thead>
+        <caption>Patient Records</caption>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Test Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- {% for record in patient_list %}
+          {{ record }}
+          {% endfor %} -->
+        {% for record in patient_list %}
+        <tr>
+          <td>{{ record.0 }}</td>
+          <td>{{ record.1 }}</td>
+          <td>{{ record.2 }}</td>
+          <td>{{ record.3 }}</td>
+          <td>{{ record.4 }}</td>
+          <td>
+            <a href="{% url 'edit-test-result' test_result_id=record.0 %}">Edit</a>
+            <a href="{% url 'delete-test-result' test_result_id=record.0 %}">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </form>
+
+
+</body>

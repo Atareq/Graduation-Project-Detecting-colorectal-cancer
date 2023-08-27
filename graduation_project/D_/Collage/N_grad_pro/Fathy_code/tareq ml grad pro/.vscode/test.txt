@@ -1,0 +1,2 @@
+Age	Gender	BMI	FOBT	Diabetes	Vegetarian	Smoking	Library_Size_Wirbel	Library_Size_raw	Library_Size_filtered	Localization_L	Localization_L,R	Localization_L,RM	Localization_R	Localization_RM	Localization_RM, L,R
+8778	1	88	0	1	0	0	778	8998	7887	0	0	1	0	0	0

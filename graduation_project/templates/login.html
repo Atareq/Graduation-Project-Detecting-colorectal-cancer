@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css'%}">
+    <title>Login</title>
+</head>
+<style>
+    body {
+        background-image: url("{% static 'images/backgraund.jpeg' %}");
+        font-family: Helvetica, sans-serif;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+<body>
+    <div class="header">
+
+        <ul>
+
+            <a href="{% url 'home' %}">
+                <li>Home</li>
+            </a>
+            <a href="{% url 'about' %}">
+                <li>About Us</li>
+            </a>
+            <a href="{% url 'help' %}">
+                <li>Help</li>
+            </a>
+            <a href="{% url 'contact' %} ">
+                <li>Contact</li>
+            </a>
+        </ul>
+    </div>
+    <div class="container">
+        <h1>Login</h1>
+        <!-- In The Action Attribute We Put the django code that will handle the incoming request -->
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div>
+                <label>E-mail</label>
+                <input type="email" required placeholder="Enter your E-mail" name="email">
+            </div>
+            <div>
+                <label> password </label>
+                <input type="password" required placeholder="Password" name="pass" minlength="8">
+            </div>
+            <input type="submit" value="Log In">
+        </form>
+
+    </div>
+
+</body>
+
+</html>
