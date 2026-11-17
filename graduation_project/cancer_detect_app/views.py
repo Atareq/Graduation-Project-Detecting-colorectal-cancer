@@ -158,9 +158,8 @@ def profile_info(request):
             print(output)
 
             """
-            user = TestResult.objects.filter(name=data["name"]).first()
-            user.test_result = output
-            user.save()
+            test_result.test_result = output
+            test_result.save(update_fields=["test_result"])
 
             # Add a success message
             logger = logging.getLogger()
