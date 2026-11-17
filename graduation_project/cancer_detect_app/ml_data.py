@@ -1,19 +1,19 @@
+from pathlib import Path
+
 import joblib
 import pandas as pd
 from .forms import TestForm
 
+APP_DIR = Path(__file__).resolve().parent
 
 # Load the trained model from the pickle file
-test_file_path = (
-        "//media//a//DATA//Fathy_code//graduation_project//cancer_detect_app//test.txt"
-    )
+test_file_path = APP_DIR / "test.txt"
 input_data = (
             "Age\tGender\tBMI\tFOBT\tDiabetes\tVegetarian\tSmoking\tLibrary_Size_Wirbel\t"
             "Library_Size_raw\tLibrary_Size_filtered\tLocalization_L\tLocalization_L,R\t"
             "Localization_L,RM\tLocalization_R\tLocalization_RM\tLocalization_RM, L,R\n")
 
-pkl_path = (
-    "//media//a//DATA//Fathy_code//graduation_project//cancer_detect_app//model_file.pkl")
+pkl_path = APP_DIR / "model_file.pkl"
 
 def ml_result(form):
     prepro_input(form)
